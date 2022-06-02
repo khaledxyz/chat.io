@@ -1,14 +1,15 @@
-// React
-import { useState } from 'react';
-
 // Components
 import Login from './components/Login/Login';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
-    const [id, setId] = useState('');
+    const [id, setId] = useLocalStorage('id');
 
     return(
-        <Login onIdSubmit={setId}/>
+        <>
+            <Login onIdSubmit={setId}/>
+            <div>{id}</div>
+        </>
     )
 }
 
